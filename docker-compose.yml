@@ -1,0 +1,18 @@
+version: '3'
+networks:
+  superbid:
+    driver: bridge
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: yarn start
+    container_name: app
+    networks:
+      - superbid
+    ports:
+      - 3000:3000
+    volumes:
+      - ".:/usr/src/app"
+      - "/usr/src/app/node_modules"
