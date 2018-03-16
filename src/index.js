@@ -4,6 +4,7 @@ import { Router } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 import routes from './routes';
 import registerServiceWorker from './registerServiceWorker';
+import './styles/style.css';
 
 const history = createBrowserHistory();
 
