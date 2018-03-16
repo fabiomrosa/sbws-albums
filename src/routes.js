@@ -1,9 +1,12 @@
 import React from 'react'; 
-import { Switch } from 'react-router'
+import { Route, Switch } from 'react-router'
 import App from './containers/App';
+import Albums from './components/Albums';
 
 export default (
   <App>
-    <Switch></Switch>
+    <Switch>
+      <Route exact path="/" component={ Albums } />
+    </Switch>
   </App>
 );
