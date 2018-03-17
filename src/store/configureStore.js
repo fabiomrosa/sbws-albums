@@ -1,10 +1,11 @@
 import { createStore, combineReducers, compose } from 'redux';
-import { dataReducer, albumReducer } from '../reducers';
+import { dataReducer, albumReducer, lightboxReducer } from '../reducers';
 
 const configureStore = ({ initialState } = {}) => {
   const rootReducer = combineReducers({
     data: dataReducer,
-    album: albumReducer
+    album: albumReducer,
+    lightbox: lightboxReducer
   });
 
   const store = createStore(rootReducer, initialState, compose(

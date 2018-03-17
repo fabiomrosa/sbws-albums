@@ -15,23 +15,34 @@ export const dataReducer = (state = { images: [], isFetching: false }, action) =
   }
 }
 
-export const albumReducer = (state = {albumId: undefined, images: [], isFetching: false }, action) => {
+export const albumReducer = (state = {albumId: undefined, images: [] }, action) => {
   switch (action.type) {
     case 'SELECT_ALBUM':
       return {
         ...state,
         albumId: action.id
       }
-    case 'START_ALBUM_FETCH':
+    case 'LOAD_ALBUM':
       return {
         ...state,
-        isFetching: true
-      };
-    case 'COMPLETE_ALBUM_FETCH':
+        images: action.images
+      }
+    default:
+      return state;
+  }
+}
+
+export const lightboxReducer = (state = { image: {}, isOpen: false }, action) => {
+  switch (action.type) {
+    case 'CLOSE_LIGHTBOX':
       return {
-        ...state,
-        images: action.images,
-        isFetching: false
+        image: {},
+        isOpen: false
+      }
+    case 'OPEN_LIGHTBOX':
+      return {
+        image: action.image,
+        isOpen: true
       }
     default:
       return state;

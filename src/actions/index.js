@@ -12,11 +12,16 @@ export const selectAlbumAction = id => ({
   id
 });
 
-export const startAlbumFetchAction = () => ({
-  type: 'START_ALBUM_FETCH'
+export const loadAlbumAction = images => ({
+  type: 'LOAD_ALBUM',
+  images
 });
 
-export const completeAlbumFetchAction = images => ({
-  type: 'COMPLETE_ALBUM_FETCH',
-  images
+export const openLightboxAction = image => ({
+  type: 'OPEN_LIGHTBOX',
+  image
+});
+
+export const closeLightboxAction = () => ({
+  type: 'CLOSE_LIGHTBOX'
 });
