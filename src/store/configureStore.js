@@ -1,21 +1,13 @@
 import { createStore, combineReducers, compose } from 'redux';
+import { dataReducer, albumReducer } from '../reducers';
 
 const configureStore = ({ initialState } = {}) => {
-  const reducer = combineReducers({
-    example: (state = {name: 'Anonymous'}, action) => {
-      switch (action.type) {
-        case 'CHANGE_NAME':
-          return {
-            ...state,
-            name: action.name
-          }
-        default:
-          return state;
-      }
-    }
+  const rootReducer = combineReducers({
+    data: dataReducer,
+    album: albumReducer
   });
-  
-  const store = createStore(reducer, initialState, compose(
+
+  const store = createStore(rootReducer, initialState, compose(
     window.__REDUX_DEVTOOLS_EXTENSION__
       ? window.__REDUX_DEVTOOLS_EXTENSION__()
       : f => f

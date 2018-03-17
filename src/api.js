@@ -1,7 +1,6 @@
 const API_ENDPOINT = 'https://jsonplaceholder.typicode.com/photos';
 
-export const fetchAlbums = () => {
+export const fetchData = () => {
   return fetch(API_ENDPOINT)
-    .then(res => res.json())
-    .then(json => json);
+    .then(res => res.json());
 };

@@ -7,8 +7,8 @@ import Album from './components/Album';
 export default (
   <App>
     <Switch>
-      <Route exact path="/" component={ Albums } />
-      <Route strict path="/album/:id" component={ Album } />
+      <Route exact path="/" component={Albums} />
+      <Route strict path="/album/:id" component={Album} />
     </Switch>
   </App>
 );
